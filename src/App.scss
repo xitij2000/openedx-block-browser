@@ -27,13 +27,14 @@ body {
 .block-browser {
     display: flex;
     background: white;
-    padding: 1rem;;
-    margin: 1rem;
+    padding: 1rem;
+    margin: 0.5rem;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
     .browser-container {
         display: flex;
         flex-direction: column;
+        min-width: 25%;
         border-right: thin solid lightgray;
         padding-right: 1rem;
         margin-right: 1rem;

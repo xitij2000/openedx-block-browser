@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import * as classnames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretRight, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
 function selectedBlockData(rawblocks, selectedBlock) {
     if (rawblocks && rawblocks.blocks && selectedBlock) {
@@ -27,7 +29,9 @@ const BlockList = ({ blocks, selectedBlock, onSelectBlock, onChangeRoot }) => (
                         e.stopPropagation();
                         e.preventDefault();
                         onChangeRoot(block.id);
-                    }}>&gt;</button>
+                    }}>
+                        <FontAwesomeIcon icon={faCaretRight} />
+                    </button>
                 }
             </li>
         ))}
@@ -98,7 +102,9 @@ export class BlockBrowser extends React.Component {
                             <button className="block-child" onClick={(e) => {
                                 e.stopPropagation();
                                 if (blocks.parent) onChangeRoot(blocks.parent);
-                            }}> Up </button>
+                            }}>
+                                <FontAwesomeIcon icon={faCaretUp} />
+                            </button>
                             <span className="block-type"> {blocks.type}: </span>
                             <span className="block-name">{blocks.display_name} </span>
                         </div>
